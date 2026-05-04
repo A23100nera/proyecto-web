@@ -13,9 +13,9 @@
         .custom-scroll::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
     </style>
 </head>
-<body class="flex flex-col md:flex-row h-screen overflow-hidden">
+<body class="flex flex-col md:flex-row min-h-screen md:h-screen overflow-y-auto md:overflow-hidden">
 
-    <aside class="w-full md:w-80 glass-card p-6 overflow-y-auto custom-scroll border-b md:border-b-0 md:border-r border-slate-700 h-auto md:h-full">
+    <aside class="w-full md:w-80 glass-card p-6 border-b md:border-r border-slate-700 h-auto md:h-full overflow-y-visible md:overflow-y-auto custom-scroll">
         <h1 class="text-2xl font-extrabold text-blue-400 mb-6 uppercase tracking-tighter flex items-center gap-2">
             Nexus Games <span class="text-xs bg-blue-500/20 px-2 py-1 rounded text-blue-300 italic">DB</span>
         </h1>
@@ -65,9 +65,9 @@
         </form>
     </aside>
 
-    <main class="flex-1 p-4 md:p-10 overflow-y-auto custom-scroll bg-slate-900">
+    <main class="flex-1 p-4 md:p-10 overflow-y-visible md:overflow-y-auto custom-scroll bg-slate-900">
         <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
