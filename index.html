@@ -44,22 +44,22 @@
 
             <div class="sm:col-span-2 md:col-span-1">
                 <label class="text-[10px] font-bold text-slate-500 uppercase flex justify-between">
-                    Rating Mínimo <span>★ <span id="rating-val" class="text-blue-400">3.0</span></span>
+                    Rating Mínimo <span>★ <span id="rating-val">3.0</span></span>
                 </label>
                 <input type="range" id="rating-range" min="0" max="5" step="0.1" value="3.0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500 mt-2">
             </div>
 
             <div class="sm:col-span-2 md:col-span-1">
-                <label class="text-[10px] font-bold text-slate-500 uppercase mb-3 block tracking-widest text-center md:text-left">Géneros</label>
-                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-2 text-[11px]">
-                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="action" class="genre-cb accent-blue-500"> Acción</label>
-                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="indie" class="genre-cb accent-blue-500"> Indie</label>
-                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="adventure" class="genre-cb accent-blue-500"> Aventura</label>
-                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="role-playing-games-rpg" class="genre-cb accent-blue-500"> RPG</label>
+                <label class="text-[10px] font-bold text-slate-500 uppercase mb-3 block tracking-widest">Géneros</label>
+                <div class="grid grid-cols-2 gap-2 text-[11px]">
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="action" class="genre-cb"> Acción</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="indie" class="genre-cb"> Indie</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="adventure" class="genre-cb"> Aventura</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="role-playing-games-rpg" class="genre-cb"> RPG</label>
                 </div>
             </div>
 
-            <button type="submit" class="sm:col-span-2 md:col-span-1 w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg active:scale-95">
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg active:scale-95">
                 APLICAR FILTROS
             </button>
         </form>
@@ -67,8 +67,15 @@
 
     <main class="flex-1 p-4 md:p-10 overflow-y-visible md:overflow-y-auto custom-scroll bg-slate-900">
         <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        </div>
+            </div>
     </main>
+
+    <div id="game-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-[999] flex items-center justify-center p-4">
+        <div class="bg-slate-800 border border-slate-700 w-full max-w-2xl rounded-[2.5rem] overflow-hidden shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-2xl z-50">✕</button>
+            <div id="modal-content" class="p-8"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
