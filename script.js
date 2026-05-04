@@ -67,9 +67,7 @@ function renderGames(games) {
 
         const card = document.createElement('div');
        card.className = "group bg-slate-800/40 rounded-3xl overflow-hidden border border-slate-700/50 flex flex-col w-full";
-        
-        // 6 ENTIDADES REPRESENTADAS:
-        // 1. Imagen | 2. Nombre | 3. Rating | 4. Fecha | 5. Géneros | 6. Plataformas
+    
         card.innerHTML = `
             <div class="relative h-52 overflow-hidden">
                 <img src="${game.background_image || 'https://via.placeholder.com/600x400'}" 
