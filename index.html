@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Games | Professional Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid #334155; }
+        .custom-scroll::-webkit-scrollbar { width: 5px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row h-screen overflow-hidden">
+
+    <aside class="w-full md:w-80 glass-card p-6 overflow-y-auto custom-scroll border-b md:border-b-0 md:border-r border-slate-700 h-auto md:h-full">
+        <h1 class="text-2xl font-extrabold text-blue-400 mb-6 uppercase tracking-tighter flex items-center gap-2">
+            Nexus Games <span class="text-xs bg-blue-500/20 px-2 py-1 rounded text-blue-300 italic">DB</span>
+        </h1>
+        
+        <form id="filter-form" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-5">
+            <div class="sm:col-span-2 md:col-span-1">
+                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Buscador</label>
+                <input type="text" id="name-input" class="w-full bg-slate-900/50 p-3 rounded-xl border border-slate-700 outline-none focus:ring-2 ring-blue-500 transition-all" placeholder="Buscar juego...">
+            </div>
+
+            <div>
+                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Desde Fecha</label>
+                <input type="date" id="date-input" class="w-full bg-slate-900/50 p-3 rounded-xl border border-slate-700 outline-none focus:ring-2 ring-blue-500 text-slate-400 text-sm">
+            </div>
+
+            <div>
+                <label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Plataforma</label>
+                <select id="platform-select" class="w-full bg-slate-900/50 p-3 rounded-xl border border-slate-700 outline-none focus:ring-2 ring-blue-500">
+                    <option value="">Todas</option>
+                    <option value="4">PC</option>
+                    <option value="187">PlayStation 5</option>
+                    <option value="1">Xbox One</option>
+                    <option value="7">Nintendo Switch</option>
+                </select>
+            </div>
+
+            <div class="sm:col-span-2 md:col-span-1">
+                <label class="text-[10px] font-bold text-slate-500 uppercase flex justify-between">
+                    Rating Mínimo <span>★ <span id="rating-val" class="text-blue-400">3.0</span></span>
+                </label>
+                <input type="range" id="rating-range" min="0" max="5" step="0.1" value="3.0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500 mt-2">
+            </div>
+
+            <div class="sm:col-span-2 md:col-span-1">
+                <label class="text-[10px] font-bold text-slate-500 uppercase mb-3 block tracking-widest text-center md:text-left">Géneros</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-2 text-[11px]">
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="action" class="genre-cb accent-blue-500"> Acción</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="indie" class="genre-cb accent-blue-500"> Indie</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="adventure" class="genre-cb accent-blue-500"> Aventura</label>
+                    <label class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg cursor-pointer"><input type="checkbox" value="role-playing-games-rpg" class="genre-cb accent-blue-500"> RPG</label>
+                </div>
+            </div>
+
+            <button type="submit" class="sm:col-span-2 md:col-span-1 w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg active:scale-95">
+                APLICAR FILTROS
+            </button>
+        </form>
+    </aside>
+
+    <main class="flex-1 p-4 md:p-10 overflow-y-auto custom-scroll bg-slate-900">
+        <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
